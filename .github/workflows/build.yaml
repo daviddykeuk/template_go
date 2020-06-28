@@ -1,5 +1,5 @@
 on: [push, pull_request]
-name: Test
+name: Build
 jobs:
   test:
     strategy:
@@ -16,3 +16,5 @@ jobs:
       uses: actions/checkout@v2
     - name: Test
       run: go test ./src/...
+    - name: Build
+      run: go build ./src/handlers/commandline/main.go
