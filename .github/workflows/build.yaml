@@ -15,6 +15,7 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Test
-      run: go test ./src/...
+      run: go test ./...
+      working-directory: ./src
     - name: Build
       run: go build ./src/handlers/commandline/main.go
